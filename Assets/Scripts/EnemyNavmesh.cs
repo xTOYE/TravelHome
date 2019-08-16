@@ -1,0 +1,63 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+public class EnemyNavmesh : MonoBehaviour
+{
+    public Transform waypointParent;
+    public float waypointDistance = 5f;
+    public float speed = 5;
+    public NavMeshAgent agent;
+
+    private Transform[] points;
+    private int currentWaypoint = 1;
+
+    void Start()
+    {
+        points = waypointParent.GetComponentsInChildren<Transform>();
+    }
+
+    void OnDrawGizmos()
+    {
+        points = waypointParent.GetComponentsInChildren<Transform>();
+
+        if (points != null)
+        {
+            Gizmos.color = Color.red;
+            for (int i = 1; i < points.Length - 1; i++)
+            {
+                Transform pointA = points[i];
+                Transform pointB = points[i + 1];
+                Gizmos.DrawLine(pointA.position, pointB.position);
+            }
+
+            for (int i = 1; i < points.Length; i++)
+            {
+                Gizmos.DrawSphere(points[i].position, waypointDistance);
+            }
+        }
+    }
+
+    void Update()
+    {
+        // Get current waypoint
+        Transform currentPoint = points[currentWaypoint];
+        // Move towards current waypoint
+        //transform.position = Vector3.MoveTowards(transform.position, currentPoint.position,speed * Time.deltaTime);
+        // Check if disctance between waypoint is close
+        agent.SetDestination(currentPoint.position);
+        
+        float distance = Vector3.Distance(transform.position, currentPoint.position);
+        if (distance <waypointDistance)
+        {
+            // Switch to next waypoint
+            currentWaypoint++;
+        }
+
+
+        // >>ERROR HANDLING<<
+        // if currentWayPoint is outside array length
+        // reset back to 1
+    }
+}
