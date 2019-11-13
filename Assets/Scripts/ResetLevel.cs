@@ -8,6 +8,6 @@ public class ResetLevel : MonoBehaviour
     public void NextScene()
     {
         Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.buildIndex);
-    }
+        SceneManager.LoadScene(activeScene.buildIndex);//reloads current scene
+    }//used as death barier
 }

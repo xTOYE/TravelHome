@@ -10,5 +10,5 @@ public class ResetLevelTrigger : MonoBehaviour
     void OnTriggerEnter ()
     {
         gameManager.NextScene();
-    }
+    }//acessing 'ResetLevel'
 }

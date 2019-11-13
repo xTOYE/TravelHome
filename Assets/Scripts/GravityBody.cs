@@ -12,8 +12,8 @@ public class GravityBody : MonoBehaviour
     void Awake()
     {
         planet = GameObject.FindGameObjectWithTag("Planet").GetComponent<GravityAttractor>();
-        rigidbody = GetComponent<Rigidbody>();
-        rigidbody.useGravity = false;
+        rigidbody = GetComponent<Rigidbody>();//finds the rigidbody
+        rigidbody.useGravity = false;//disables gravity
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
     }
 

@@ -7,6 +7,6 @@ public class EndTrigger : MonoBehaviour
     public GameManager gameManager;
     void OnTriggerEnter ()
     {
-        gameManager.NextScene();
+        gameManager.NextScene();//goal that sets you to the next scene
     }
 }

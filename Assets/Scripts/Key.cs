@@ -6,19 +6,13 @@ public class Key : MonoBehaviour
 {
     public Component gatecolliderhere;
     public GameObject keygone;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void OnTriggerStay ()
     {
         if(Input.GetKey(KeyCode.E))
-        gatecolliderhere.GetComponent<BoxCollider>().enabled = true;
+        gatecolliderhere.GetComponent<BoxCollider>().enabled = true;//so is active at start of scene
 
         if (Input.GetKey(KeyCode.E))
-        keygone.SetActive(false);
+        keygone.SetActive(false);//pressing 'E' deletes the gate from the scene
     }
 }

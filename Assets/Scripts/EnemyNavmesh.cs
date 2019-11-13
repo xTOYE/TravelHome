@@ -15,7 +15,7 @@ public class EnemyNavmesh : MonoBehaviour
 
     void Start()
     {
-        points = waypointParent.GetComponentsInChildren<Transform>();
+        points = waypointParent.GetComponentsInChildren<Transform>();//gets the waypoints
     }
 
     void OnDrawGizmos()
@@ -24,17 +24,17 @@ public class EnemyNavmesh : MonoBehaviour
 
         if (points != null)
         {
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.red;//so they get colored red first
             for (int i = 1; i < points.Length - 1; i++)
             {
                 Transform pointA = points[i];
-                Transform pointB = points[i + 1];
-                Gizmos.DrawLine(pointA.position, pointB.position);
+                Transform pointB = points[i + 1];//next waypoint
+                Gizmos.DrawLine(pointA.position, pointB.position);//draws line between waypoints
             }
 
             for (int i = 1; i < points.Length; i++)
             {
-                Gizmos.DrawSphere(points[i].position, waypointDistance);
+                Gizmos.DrawSphere(points[i].position, waypointDistance);//draw the radius of the waypoints for Debug
             }
         }
     }

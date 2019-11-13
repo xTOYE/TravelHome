@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         if (points != null)
         {
             points = waypointParent.GetComponentsInChildren<Transform>();
-            Gizmos.color = Color.red;
+            Gizmos.color = Color.red;//setting the clolor of the gizmos to red
             for (int i = 1; i < points.Length - 1; i++)
             {
                 Transform pointA = points[i];
