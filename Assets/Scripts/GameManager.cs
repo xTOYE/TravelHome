@@ -8,17 +8,13 @@ public class GameManager : MonoBehaviour
 {
     public void NextScene()
     {
-        // Get current scene
-        Scene activeScene = SceneManager.GetActiveScene();
-        // Load next scene
-        SceneManager.LoadScene(activeScene.buildIndex + 1);
+        Scene activeScene = SceneManager.GetActiveScene();// Get current scene
+        SceneManager.LoadScene(activeScene.buildIndex + 1);// Load next scene
     }
 
     public void ResetScene()
     {
-        // Get current scene
-        Scene activeScene = SceneManager.GetActiveScene();
-        // Load next scene
-        SceneManager.LoadScene(activeScene.buildIndex);
+        Scene activeScene = SceneManager.GetActiveScene();// Get current scene
+        SceneManager.LoadScene(activeScene.buildIndex);// reset scene
     }
 }

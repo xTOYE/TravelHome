@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //<access-specifier>   <data-type>   <variable-name>
     public Rigidbody rb;
     public float speed = 5f;
 

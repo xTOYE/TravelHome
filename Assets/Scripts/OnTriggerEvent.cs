@@ -7,16 +7,11 @@ public class OnTriggerEvent : MonoBehaviour
 {
     public UnityEvent onEnter;
     public string hitTag = "Player";
-    // Clean up code: CTRL + K, CTRL + D
-    // Fold Code: CTRL + M + O
-    // Un-Fold Code: CTRL + M + P
     private void OnTriggerEnter(Collider other)
     {
-        // If the collider's tag is the same as 'hitTag'
-        if (other.tag == hitTag)
+        if (other.tag == hitTag)// If the collider's tag is the same as 'hitTag'
         {
-            // Invoke the event (Run all events in 'onEnter')
-            onEnter.Invoke();
+            onEnter.Invoke();// Invoke the event (Run all events in 'onEnter')
         }
     }
 }

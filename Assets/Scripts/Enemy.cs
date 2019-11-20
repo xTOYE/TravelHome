@@ -42,19 +42,16 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        // Get current waypoint
-        Transform currentPoint = points[currentWaypoint];
-        // Move towards current waypoint
-        transform.position = Vector3.MoveTowards(transform.position, currentPoint.position, speed * Time.deltaTime);
-        // Check if disctance between waypoint is close
-        float distance = Vector3.Distance(transform.position, currentPoint.position);
+        
+        Transform currentPoint = points[currentWaypoint];// Get current waypoint
+        transform.position = Vector3.MoveTowards(transform.position, currentPoint.position, speed * Time.deltaTime);// Move towards current waypoint
+        float distance = Vector3.Distance(transform.position, currentPoint.position);// Check if disctance between waypoint is close
         if (distance < waypointDistance)
         {
             if (isForward)
             {
-                // Switch to next waypoint
                 currentWaypoint++;
-                if(currentWaypoint >= points.Length)
+                if(currentWaypoint >= points.Length)// Switch to next waypoint
                 {
                     currentWaypoint = points.Length - 1;
                     isForward = false;
@@ -70,14 +67,5 @@ public class Enemy : MonoBehaviour
                 }
             }
         }
-
-        // >>ERROR HANDLING<<
-        // if currentWayPoint is outside array length
-        // reset back to 1
-    }
-    void update()
-    {
-
-
     }
 }

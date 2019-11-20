@@ -12,8 +12,9 @@ public class PlayerManager : MonoBehaviour
     {
         instance = this;
 
-        #endregion
+        
     }
+    #endregion
 
     public GameObject Player;
 }
